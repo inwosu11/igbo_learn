@@ -4,9 +4,11 @@
     <body>
         <h1>List of Igbo Words</h1>
         <h2>Igbo Words</h2>
+        
+        <ul>
             {%for word in words%}
             <li>
-                <strong>{{ word.word }}</strong>: {{word.meaning}}
+                <strong>{{ word.word }}</strong>: {{ word.meaning }}
                 <br>
                 <em>{{ word.example_sentence }}</em>
                 {% if word.sound_file %}

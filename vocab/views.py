@@ -15,5 +15,5 @@ def alphabet_list(request):
     return render(request, 'vocab/alphabet_list.html', {'alphabets': alphabets})
 
 def word_list(request):
-    words = IgboAlphabet.objects.all()
+    words = IgboWord.objects.all()
     return render(request, 'vocab/word_list.html', {'words': words})
