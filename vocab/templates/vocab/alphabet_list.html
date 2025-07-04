@@ -3,7 +3,21 @@
     <head><title>Igbo Alphabets</title></head>
     <body>
         <h1> List of Alphabets</h1>
-        <p>This is a placeholder for displaying alphabets.</p>
-        <a href="{% url 'home' %}">Back to Home</a>
+        <h1>Igbo Alphabets</h1>
+        <ul>
+            {% for alphabet in alphabets %}
+            <li>
+                <strong>{{ alphabet.alphabet }}</strong> - {{ alphabet.name }}
+                {% if alphabet.sound_flie %}
+                 <audio controls>
+                    <source  src="{{ alphabet.sound_flie.url }}" type="audio/mpeg">
+                 </audio>
+                 {% endif %}
+                </li>
+                {% empty %}
+                    <li>No alphabets found</li>
+                {% endfor %}
+            </ul>
+                <a href="{% url 'home' %}">Back to Home</a>
     </body>
 </html>

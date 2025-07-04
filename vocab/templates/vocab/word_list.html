@@ -2,8 +2,25 @@
 <html>
     <head><title>Igbo Words</title></head>
     <body>
-        <li>List of Igbo Words</h1>
-        <p>This is a placeholder for displaying words.</p>
+        <h1>List of Igbo Words</h1>
+        <h2>Igbo Words</h2>
+            {%for word in words%}
+            <li>
+                <strong>{{ word.word }}</strong>: {{word.meaning}}
+                <br>
+                <em>{{ word.example_sentence }}</em>
+                {% if word.sound_file %}
+                <br>
+                <audio controls>
+                    <source src="{{ word.sound_file.url }}" type="audio/mpeg">
+                </audio>
+                {% endif %}
+            </li>
+            {% empty %}
+            <li>No words found.</li>
+            {% endfor %}
+        </ul>
+
         <a href="{% url 'home' %}">Back to Home</a>    
     </body>
 </html>

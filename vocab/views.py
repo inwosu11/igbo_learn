@@ -11,7 +11,9 @@ def home(request):
     return render(request, 'vocab/home.html')
 
 def alphabet_list(request):
-    return render(request, 'vocab/alphabet_list.html')
+    alphabets = IgboAlphabet.objects.all()
+    return render(request, 'vocab/alphabet_list.html', {'alphabets': alphabets})
 
 def word_list(request):
-    return render(request, 'vocab/word_list.html')
+    words = IgboAlphabet.objects.all()
+    return render(request, 'vocab/word_list.html', {'words': words})
