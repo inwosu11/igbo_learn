@@ -31,12 +31,12 @@ class IgboWord(models.Model):
 
     def __str__(self):
         return self.word
-class Word(models.Model):
-    english_definition = models.TextField()
-    part_of_speech = models.CharField(max_length=50, blank=True)
+# class Word(models.Model):
+    # english_definition = models.TextField()
+    # part_of_speech = models.CharField(max_length=50, blank=True)
 
-    def __str__(self):
-        return self.english_definition
+    # def __str__(self):
+    #     return self.english_definition
 class DialectWord(models.Model):
     DIALECT_CHOICES = [
         ('CENTRAL', 'Central'),
@@ -44,7 +44,7 @@ class DialectWord(models.Model):
         ('NSUKKA', 'Nsukka'),
     ]
 
-    word = models.ForeignKey(Word, on_delete=models.CASCADE, related_name='dialect_words')
+    word = models.ForeignKey('IgboWord', on_delete=models.CASCADE, related_name='dialect_words')
     dialect = models.CharField(max_length=20, choices=DIALECT_CHOICES)
     spelling = models.CharField(max_length=100)
     audio_pronunciation = models.FileField(upload_to='audio/', blank=True, null=True)
