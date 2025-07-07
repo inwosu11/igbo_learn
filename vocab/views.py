@@ -1,4 +1,4 @@
-from django.shortcuts import render
+from django.shortcuts import redirect, render
 from .models import IgboAlphabet, IgboWord
 from django.http import HttpResponse
 from .forms import IgboWordForm
@@ -24,6 +24,7 @@ def create_igbo_word(request):
         if form.is_valid():
             form.save()
             return redirect('word_list')
-        else:
-            form = IgboWordForm()
-        return render(request, 'vocab/create_word.html', {'form': form})
+    else:
+        form = IgboWordForm()
+    
+    return render(request, 'vocab/create_word.html', {'form': form})

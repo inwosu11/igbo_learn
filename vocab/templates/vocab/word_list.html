@@ -8,17 +8,34 @@
         <ul>
             {%for word in words%}
             <li>
-                <strong>{{ word.word }}</strong>: {{ word.meaning }}
-                <br>
+                <strong>{{ word.word }}</strong>: {{ word.meaning }}<br>
                 <em>{{ word.example_sentence }}</em>
+
                 {% if word.sound_file %}
                 <br>
                 <audio controls>
                     <source src="{{ word.sound_file.url }}" type="audio/mpeg">
                 </audio>
-                {% if word.dialectword_set.all %}
-                
                 {% endif %}
+
+                {% if word.dialectword_set.all %}
+                    <p><strong>Dialect Variants:</strong></p>
+                    <ul>
+                        {% for  dialect_word in word.dialectword_set.all %}
+                            <li>
+                                {{ dialect_word.dialect }}: {{ dialect_word.spelling }}
+                                {% if dialect_word.audio_pronounciation %}
+                                    <br>
+                                    <audio controls>
+                                        <source src="{{ dialect_word.audio_pronounciation.url }}" type ="audio/mpeg">
+                                    </audio>
+                                {% endif %}
+                                </li>
+                            {% endfor %}
+                        </ul>
+                        {% else %}
+                            <p><em>No Dialect variants yet.</em></p>
+                        {% endif %}
             </li>
             {% empty %}
             <li>No words found.</li>
