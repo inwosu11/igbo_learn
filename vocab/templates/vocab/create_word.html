@@ -1,0 +1,13 @@
+<!DOCTYPE html>
+<html>
+<head><title>Add Igbo Word</title></head>
+<body>
+    <h1>Add a New Igbo Word</h1>
+    <form method='POST' enctype="multipart/form-data">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit">Submit</button>
+    </form>
+    <a href="{% url 'word_list' %}">Back to Word List</a>
+</body>
+</html>
