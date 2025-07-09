@@ -1,5 +1,5 @@
 from django.db import models
-
+from django.utils.text import slugify
 class IgboAlphabet(models.Model):
     """
     Igbo Alphabet Model
@@ -21,9 +21,15 @@ class IgboWord(models.Model):
     Igbo Word Model
     """
     word = models.CharField(max_length=100, unique=True)
+    slug = models.SlugField(unique=True, blank=True)
     meaning = models.CharField(max_length=200)
     example_sentence = models.TextField(null=True, blank=True)
     sound_file = models.FileField(upload_to='word_sounds/', null=True, blank=True)
+    
+    def save(self, *args, **kwargs):
+        if not self.slug:
+            self.slug = slugify(self.word)
+        super().save(*args, **kwargs)
 
     class Meta:
         verbose_name = "Igbo Word"
