@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+    <head><title>{{ word.word }}</title></head>
+    <body>
+        <h1>{{ word.word }} </h1>
+        <p><strong>Meaning:</strong> {{ word.meaning }}</p>
+        <p><em>{{ word.example_sentence }}</em></p>
+
+        {% if word.sound_file %}
+        <audio controls>
+            <source src="{{ word.sound_file.url }}" type="audio/mpeg">
+        </audio>
+        {% endif %}
+
+        {% if word.dialect_words.all %}
+            <h3>Dialect Variants</h3>
+            <ul>
+                {% for dialect in word.dialect_words.all %}
+                    <li>
+                        {{ dialect.dialect }}: {{ dialect.spelling }}
+                        {% if dialect_word.audio_pronounciation %}
+                        <audio controls>
+                            <source src="{{ dialect.audio_pronunciation.url }}" type="audio/mpeg">
+                        </audio>
+                    {% endif %}
+                </li>
+            {% endfor %}
+        </ul>
+    {% else %}
+        <p><em>No dialect variants yet.</em></p>
+    {% endif %}
+
+    <a href="{% url 'word_list' %}">← Back to Word List</a>
+</body>
+</html>    
