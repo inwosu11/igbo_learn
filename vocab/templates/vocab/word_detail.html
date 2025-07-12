@@ -18,9 +18,9 @@
                 {% for dialect in word.dialect_words.all %}
                     <li>
                         {{ dialect.dialect }}: {{ dialect.spelling }}
-                        {% if dialect_word.audio_pronounciation %}
+                        {% if dialect.audio_pronounciation %}
                         <audio controls>
-                            <source src="{{ dialect.audio_pronunciation.url }}" type="audio/mpeg">
+                            <source src="{{ dialect.audio_pronounciation.url }}" type="audio/mpeg">
                         </audio>
                     {% endif %}
                 </li>

@@ -7,10 +7,12 @@
 
         <ul>
             {% for word in words %}
+            <a href="{% url 'word_detail' slug=word.slug %}">
+            <strong>{{ word.word }}</strong>
+            </a>: {{ word.meaning }}
+            <em>{{ word.example_sentence }}</em>
             <li>
                 <strong>{{ word.word }}</strong>: {{ word.meaning }}<br>
-                <em>{{ word.example_sentence }}</em>
-
                 {% if word.sound_file %}
                 <br>
                 <audio controls>
@@ -18,10 +20,10 @@
                 </audio>
                 {% endif %}
 
-                {% if word.dialectword_set.all %}
+                {% if word.dialect_words.all %}
                     <p><strong>Dialect Variants:</strong></p>
                     <ul>
-                        {% for  dialect_word in word.dialectword_set.all %}
+                        {% for  dialect_word in word.dialect_words.all %}
                             <li>
                                 {{ dialect_word.dialect }}: {{ dialect_word.spelling }}
                                 {% if dialect_word.audio_pronounciation %}
@@ -33,15 +35,15 @@
                                 </li>
                             {% endfor %}
                         </ul>
-                        {% else %}
-                            <p><em>No Dialect variants yet.</em></p>
-                        {% endif %}
+                    {% else %}
+                        <p><em>No Dialect variants yet.</em></p>
+                    {% endif %}
             </li>
             {% empty %}
             <li>No words found.</li>
             {% endfor %}
         </ul>
-
+        
         <a href="{% url 'home' %}">Back to Home</a>    
     </body>
 </html>
