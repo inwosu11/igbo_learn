@@ -1,0 +1,45 @@
+IGBO WORD,SPELLING VARIANTS,ENGLISH TRANSLATION,IGBO SENTENCE,ENGLISH SENTENCE,DIALECT/VARIANT,TONE NOTES,WORD TYPE,TAGS,IMPORTANT NOTES,SINGULAR,PLURAL,VERB CONJUGATION,LEVEL
+ńnọ,ńnọọ,welcome,"Chidimma, ńnọ!","Welcome, Chidimma",N/A,High tone on both 'n' and 'o',EXPRESSION,"greeting,","""Nno"" is a shortened or simplified form of ""Nnọọ"" often seen in casual writing or speech. Both are correct.",ńnọ,ńnọ-nụ,N/A,1
+ńnọ,ńnọọ,welcome,—,—,N/A,High tone on both ‘n’ and ‘o’,EXPRESSION,greeting,“Nno” is a shortened or simplified form of “Nnọọ”; both are correct,ńnọ,ńnọ-nụ,N/A,1
+ndewo,ńdee/ńdaa/ńdịị/kedụ/olia/olee,hello,—,—,varies by dialect,—,GREETING,basic conversation,Includes many dialect forms,—,—,N/A,1
+aha,eha/awha/ewha/afa/efa,name,—,—,varies by dialect,—,NOUN,identification,—,—,—,N/A,1
+mụ,mị,me,—,—,—,—,PRONOUN,personal,shortened from mụọ,—,—,N/A,1
+bụ,wụ/vụ,is,—,—,—,—,VERB,—,copula variations,—,—,bụ,1
+nwa,nwa/ńwa amụrụ/amụlu,baby,—,—,"varies (Anambra, Imo, etc.)",—,NOUN,family,Base word for boy/girl/child,nwa,ụmụ,—,1
+nwanwaoke,nwanwaoke/nwanwaoko/wawaoke,boy,—,—,—,—,NOUN,gender,—,—,—,—,1
+nwanwaanyi,nwanwaanyi/wawaaya/nwanaanị,girl,—,—,—,—,NOUN,gender,—,—,—,—,1
+nwatakịrị,nwatakịrị/nwantākịrị/nw̄atakịrị,child,—,—,—,—,NOUN,family,—,—,—,—,1
+nwaanyị,nwaanyị/waaya/naañị,woman,Ḿ bụ nwaanyị.,I am a woman.,dialectal,High tone on “ḿ”,NOUN,gender,Used in self-introduction,nwaanyị,ụmụanyị,—,1
+nwaanyị,—,woman,A bụ mụ nwaanyị.,I am a woman.,dialectal,“mụ” = I/me,PRONOUN,gender,Dialectal variation of self-intro,—,—,—,1
+nwoke,nwoke/nwaokè/waoke,man,—,—,—,—,NOUN,gender,—,nwoke,ụmụ nwoke,—,1
+nwata,nwata,young (person),—,—,—,—,NOUN,age descriptor,Used for children and youth,nwata,ụmụntakịrị,—,1
+okenye,okenye/bgalanya/ogaranya/gadi/agadị/agad tzi,adult,—,—,varies,—,NOUN,age descriptor,“agadị” = elder,okenye,ndị okenye,—,1
+nne,nne/ne,mother,—,—,—,—,NOUN,family,—,nne,nne-nụ,—,1
+nna,nna,father,—,—,—,—,NOUN,family,—,nna,nna-nụ,—,1
+nnaochie,nnaochie/papa nnukwu,grandfather,—,—,—,—,NOUN,family,“nnaochie” = father ancestor,nnaochie,—,—,1
+nneochie,nneochie/mama nnukwu,grandmother,—,—,—,—,NOUN,family,“nneochie” = mother ancestor,nneochie,—,—,1
+ọ,ọ = he/she/it,he / she / it,Ọ bụ okenye.,She is an adult.,—,Mid tone,NOUN,personal,Igbo does not distinguish gender in pronouns,ọ,—,bụ,1
+okenye,okenye,adult,Ọ bụ okenye.,He/She is an adult.,—,"Low tone on ke, mid on nye",NOUN,age,General word for adult,okenye,ndị okenye,—,1
+nwa amụrụ ọhụrụ,—,newborn baby,Ọ bụ nwa amụrụ ọhụrụ.,He is a newborn baby.,—,"amụrụ = high on rụ, ọhụrụ = rising tones",NOUN,family,"“amụrụ” = born, “ọhụrụ” = new",nwa amụrụ ọhụrụ,—,—,1
+nwaanyị,nwaanyị,girl,Ọ bụ nwaanyị.,She is a girl.,—,High tone on final ị,NOUN,gender,"Also means woman, used based on context",nwaanyị,ụmụanyị,—,1
+nwoke,nwoke,man,Ọ bụ nwoke.,He is a man.,—,Rising tone on wo,NOUN,gender,Common term for man,nwoke,ụmụ nwoke,—,1
+nwaanyị,—,woman,—,—,—,See earlier entries,NOUN,gender,See image 2,nwaanyị,ụmụanyị,—,1
+nwa amụrụ,nwa amụrụ/amụlu,born child,—,—,varies,Tone on rụ (amụrụ),NOUN,family,Often paired with “ọhụrụ” (new),nwa amụrụ,—,—,1
+ụmụ amụrụ,ụmụ amụrụ/amụlu (ọfụrụ/ọhụrụ/ọfụlụ/ọfụ/ọvyụ/ọwhụụ),babies,—,—,multiple,"Tone on ""ụmụ"" and “rụ”",NOUN,family,"Plural of ""nwa amụrụ"" (newborn)",nwa amụrụ,ụmụ amụrụ,—,1
+ụmụaka ụmụnwaoke,ụmụaka ụmụnwaoke / ụmụaka ụmụnwaoko,boys,—,—,—,"Tone on ""ụ"" in ụmụaka",NOUN,gender,"“ụmụaka” = kids, with male modifier",nwaanyị,ụmụaka ụmụnwaoke,—,1
+ụmụaka ụmụnwaanyị,ụmụaka ụmụ(nwaanyị/waaya/naañị),girls,—,—,—,Tone on “ụ” and final “ị”,NOUN,gender,"“ụmụaka” = children, modified as girls",nwaanyị,ụmụaka ụmụnwaanyị,—,1
+ụmụaka,ụmụaka/ụmụntakịrị/ụmụńtịkịlị/ụmụńtịlị/ụmụaziri,children,Anyị bụ ụmụaka.,We are children.,variant list,Many rising tones,NOUN,age/family,Many dialect variants for children,nwata,ụmụaka,bụ,1
+ụmụnwaoke,ụmụnwaoke/ụmụnwaoko/ụmụwaoke,men,—,—,—,Rising tone on “ọke”,NOUN,gender,Plural of “nwoke”,nwoke,ụmụnwaoke,—,1
+ụmụnwaanyị,ụmụnwaanyị/ụmụwaaya/ụmụnaañị,women,—,—,—,Tone on “ị”,NOUN,gender,Plural of “nwaanyị”,nwaanyị,ụmụnwaanyị,—,1
+ndị nne,ndị nne/ńdí’ nne,mothers,—,—,—,High tone on “ńdí”,NOUN,family,Plural of “nne”,nne,ndị nne,—,1
+ndị nna,ndị nna/ńdí’ nna,fathers,Ha bụ ndị nna.,They are fathers.,—,High tone on “ńdí”,NOUN,family,Plural of “nna”,nna,ndị nna,bụ,1
+ndị okenye,—,adults,Ha bụ ndị okenye.,They are adults.,—,High tone on “ńdí”,NOUN,age group,“ndị” marks plural noun phrase,okenye,ndị okenye,bụ,1
+ndị nnaochie,ndị nnaánna/ńdí nnaochie,ancestors,—,—,—,"High tone on “ńdí”, “á” in nnaánna",NOUN,ancestry,“nnaochie” = ancestral father/mother,nnaochie,ndị nnaochie,—,1
+anyị,—,we,Anyị bụ ụmụaka.,We are children.,—,Mid tone,PRONOUN,personal,1st person plural,—,—,bụ,1
+ha,ha/fa,they,Ha bụ ndị okenye.,They are adults.,varies by dialect,—,PRONOUN,personal,Common Igbo plural subject pronoun,—,—,bụ,1
+aha,eha/awha/ewha/afa/efa,name,—,—,dialectal,Low tone,NOUN,identity,Also used for person/place/thing,aha,—,—,1
+ebi,ebe / ibe / nk’ / ńga,place,E nwere ebe a na-akpọ Enuugwu.,There is a place called Enuugwu.,varies by dialect,Low/mid tones,NOUN,location,All refer to “place” depending on dialect,ebi,—,—,1
+mkpụrụ,mkpulu / mkpụlụrụ,fruit,E nwere mkpụrụ a na-akpọ Akwụ.,There is a fruit called Akwụ.,—,Rising on “kpụ”,NOUN,food,Can refer to seed or fruit,mkpụrụ,mkpụrụ,—,1
+anụmanụ,alumalu / an’man,animal,E nwere anụmanụ a na-akpọ Ụzụchị.,There is an animal called Ụzụchị.,varies,Rising/falling tone,NOUN,animal,Generic word for animal,anụmanụ,anụmanụ,—,1
+ihe,ife / ive,thing,E nwere ihe a na-akpọ Uli.,There is a thing called Uli.,varies,Low-mid tone,NOUN,object,Common root for “thing” in Igbo,ihe,ihe,—,1
+onye,oye,person,E nwere onye a na-akpọ Chinwéndụ.,There is a person called Chinwéndụ.,varies,High tone on “ye”,NOUN,person,Generic word for person,onye,ndị mmadụ,—,1
