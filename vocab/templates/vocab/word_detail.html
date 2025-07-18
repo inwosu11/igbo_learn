@@ -1,9 +1,9 @@
 {% extends 'base.html' %}
 {% block content %}
-<!DOCTYPE html>
+{% comment %} <!DOCTYPE html>
 <html>
     <head><title>{{ word.word }}</title></head>
-    <body>
+    <body> {% endcomment %}
         <h1>{{ word.word }} </h1>
         <p><strong>Meaning:</strong> {{ word.meaning }}</p>
         <p><em>{{ word.example_sentence }}</em></p>
@@ -33,6 +33,6 @@
     {% endif %}
 
     <a href="{% url 'word_list' %}">← Back to Word List</a>
-</body>
-</html>    
+{% comment %} </body>
+</html>     {% endcomment %}
 {% endblock %}

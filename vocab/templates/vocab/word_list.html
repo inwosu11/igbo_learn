@@ -1,52 +1,66 @@
 {% extends 'base.html' %}
 {% block content %}
-<!DOCTYPE html>
-<html>
-    <head><title>Igbo Words</title></head>
-    <body>
-        <h1>List of Igbo Words</h1>
-        <h2>Igbo Words</h2>
+<div class="max-w-4xl mx-auto px-4 py-8">
+    <h1 class="text-3xl font-bold text-primary mb-6">List of Igbo Words</h1>
+        
 
-        <ul>
+        <ul class="space-y-6">
             {% for word in words %}
-            <a href="{% url 'word_detail' slug=word.slug %}">
-            <strong>{{ word.word }}</strong>
-            </a>: {{ word.meaning }}
-            <em>{{ word.example_sentence }}</em>
-            <li>
-                <strong>{{ word.word }}</strong>: {{ word.meaning }}<br>
+            <li class="bg-white shadow-md p-4 rounded-lg border border-gray-200">
+                <!-- word and link to detail-->
+            <a href="{% url 'word_detail' slug=word.slug %}" class="text-xl font-semibold text-primary hover:underline">
+                {{ word.word }}
+            </a>
+            <p class="text-gray-700 mt-1">{{ word.meaning }} </p>
+            
+            <!-- Example Sentence -->
+            {% if word.example_sentence %}
+                <p class="text-sm italic text-gray-600 mt-2">
+                    "{{ word.example_sentence }}"
+                </p>
+            {% endif %}
+            
+            <!-- Word Audio -->
                 {% if word.sound_file %}
-                <br>
-                <audio controls>
+                <audio controls class="mt-2 w-full">
                     <source src="{{ word.sound_file.url }}" type="audio/mpeg">
+                    Your browser does not support the audio element.
                 </audio>
                 {% endif %}
 
+                <!-- Dialect Variants-->
                 {% if word.dialect_words.all %}
-                    <p><strong>Dialect Variants:</strong></p>
-                    <ul>
+                <div class="mt-4">
+                    <p class="font-medium text-gray-800">Dialect Variants:</p>
+                    <ul class="mt-1 space-y-1 list-disc list-inside text-sm text-gray-700">
                         {% for  dialect_word in word.dialect_words.all %}
                             <li>
-                                {{ dialect_word.dialect }}: {{ dialect_word.spelling }}
+                                <span class="font-semibold">{{ dialect_word.dialect }}:</span>  {{ dialect_word.spelling }}
+                                
                                 {% if dialect_word.audio_pronounciation %}
-                                    <br>
-                                    <audio controls>
+                                   
+                                    <audio controls class="mt-1 w-full">
                                         <source src="{{ dialect_word.audio_pronounciation.url }}" type ="audio/mpeg">
                                     </audio>
                                 {% endif %}
                                 </li>
                             {% endfor %}
                         </ul>
+                    </div>
                     {% else %}
                         <p><em>No Dialect variants yet.</em></p>
                     {% endif %}
-            </li>
+                </li>
             {% empty %}
-            <li>No words found.</li>
+            <li class="text-sm text-gray-500">No words found.</li>
             {% endfor %}
         </ul>
         
-        <a href="{% url 'home' %}">Back to Home</a>    
-    </body>
-</html>
+        <div class="mt-6">
+    <a href="{% url 'home' %}" class="inline-block text-sm text-white bg-primary hover:bg-indigo-600 px-4 py-2 rounded">
+      ← Back to Home
+    </a>
+  </div>
+</div>
+
 {% endblock %}

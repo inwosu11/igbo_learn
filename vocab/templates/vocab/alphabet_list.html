@@ -1,25 +1,31 @@
 {% extends 'base.html' %}
 {% block content %}
-<!DOCTYPE html>
-<html>
-    <head><title>Igbo Alphabets</title></head>
-    <body>
-        <h1> List of Igbo Alphabets</h1>
-        <ul>
+
+<div class="max-w-3xl mx-auto px-4 py-8">
+        <h1 class="text-3xl font-bold text-primary mb-6"> List of Igbo Alphabets</h1>
+        
+        <ul class="space-y-4">
             {% for letter in alphabets %}
-            <li>
-                <strong>{{ letter.alphabet }}</strong> - {{ letter.name }} - {{ letter.sound }}
-                {% if alphabet.sound_flie %}
+            <li class="bg-white shadow-md p-4 rounded-lg border border-gray-200">
+                <p class="text-lg font-semibold">{{ letter.alphabet }}</p>
+                <p class="text-gray-700">{{ letter.name }} - {{ letter.sound }}</p>
+
+                {% if letter.sound_flie %}
                  <audio controls>
-                    <source  src="{{ alphabet.sound_flie.url }}" type="audio/mpeg">
+                    <source  src="{{ alphabet.sound_file.url }}" type="audio/mpeg">
+                    Your browser does not support the audio element.
                  </audio>
                  {% endif %}
                 </li>
                 {% empty %}
-                    <li>No alphabets found</li>
+                    <li class="text-gray-500">No alphabets found</li>
                 {% endfor %}
             </ul>
-                <a href="{% url 'home' %}">Back to Home</a>
-    </body>
-</html>
+                
+            <div class="mt-6">
+              <a href="{% url 'home' %}" class="inline-block text-sm text-white bg-primary hover:bg-indigo-600 px-4 py-2 rounded">
+                ← Back to Home
+            </a>
+            </div>
+            </div>
 {% endblock %}
