@@ -7,4 +7,5 @@ urlpatterns = [
     path('words/', views.word_list, name='word_list'), #/words/
     path('add-word/', views.create_igbo_word, name='add_word'),
     path('words/<slug:slug>/', views.word_detail, name='word_detail'),
+    path('flashcards/', views.flashcard_view, name='flashcards'),
 ]

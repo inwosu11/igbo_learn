@@ -15,6 +15,11 @@ def alphabet_list(request):
     alphabets = IgboAlphabet.objects.all()
     return render(request, 'vocab/alphabet_list.html', {'alphabets': alphabets})
 
+def flashcard_view(request):
+    words = list(IgboWord.objects.all())
+    random.shuffle(words) #optional: shuffle for randomness
+    return render(request, 'flashcards.html', {'words': words})
+
 def word_list(request):
     words = IgboWord.objects.prefetch_related('dialect_words').all()
     return render(request, 'vocab/word_list.html', {'words': words})

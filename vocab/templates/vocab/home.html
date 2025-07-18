@@ -1,13 +1,27 @@
+{% load static %}
 <!DOCTYPE html>
-<html>
-    <head><title>Igbo Learn</title></head>
-    <body>
-        <h1>Welcome to the Igbo Learning App</h1>
-        <ul>
-            <li><a href="{% url 'alphabet_list' %}">View Igbo Alphabets</a></li>
-            <li><a href="{% url 'word_list' %}">View Igbo words</a></li>
-        </ul>
-    </body>
-    </html>
-    
-            
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Igbo Learn</title>
+    <link href="{% static 'css/output.css' %}" rel="stylesheet" />
+  </head>
+  <body class="bg-blue-200 text-center">
+    <h1 class="text-3xl font-bold mt-10">Welcome to the Igbo Learning App</h1>
+    <ul class="mt-4 space-y-2">
+      <li>
+        <a href="{% url 'alphabet_list' %}" class="text-indigo-600 underline hover:text-indigo-800">
+          View Igbo Alphabets
+        </a>
+      </li>
+      <li>
+        <a href="{% url 'word_list' %}" class="text-indigo-600 underline hover:text-indigo-800">
+          View Igbo Words
+        </a>
+      </li>
+    </ul>
+    <h1 class="text-3xl font-bold text-red-500 mt-10">
+      If this is red and centered on a blue background, Tailwind works!
+    </h1>
+  </body>
+</html>
