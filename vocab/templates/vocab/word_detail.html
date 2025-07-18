@@ -1,27 +1,38 @@
 {% extends 'base.html' %}
 {% block content %}
-{% comment %} <!DOCTYPE html>
-<html>
-    <head><title>{{ word.word }}</title></head>
-    <body> {% endcomment %}
-        <h1>{{ word.word }} </h1>
-        <p><strong>Meaning:</strong> {{ word.meaning }}</p>
-        <p><em>{{ word.example_sentence }}</em></p>
 
+<div class="max-w-3xl mx-auto px-4 py-8">
+        <h1 class="text-3xl font-bold text-primary mb-4">{{ word.word }} </h1>
+        
+        <!-- Meaning -->
+        <p class="text-lg text-gray-700 mb-2">
+            <strong>Meaning:</strong> {{ word.meaning }}
+        </p>
+
+        <!-- Example Sentence -->
+        {% if word.example_sentence %}
+        <p class="italic text-gray-600 mb-4">
+            "{{ word.example_sentence }}"
+        </p>
+        {% endif %}
+
+        <!-- Audio -->
         {% if word.sound_file %}
-        <audio controls>
+        <audio controls class="w-full mb-6">
             <source src="{{ word.sound_file.url }}" type="audio/mpeg">
+            Your browser does not support the audio element.
         </audio>
         {% endif %}
 
+        <!-- Dialect Variants -->
         {% if word.dialect_words.all %}
-            <h3>Dialect Variants</h3>
-            <ul>
+            <h2 class="text-xl font-semibold text-textbase mb-2">Dialect Variants</h2>
+            <ul class="space-y-3 mb-6">
                 {% for dialect in word.dialect_words.all %}
-                    <li>
-                        {{ dialect.dialect }}: {{ dialect.spelling }}
+                    <li class="bg-gray-100 p-3 rounded-lg border border-gray-200">
+                        <p><span class="font-medium">{{ dialect.dialect }}</span>: {{ dialect.spelling }}</p>
                         {% if dialect.audio_pronounciation %}
-                        <audio controls>
+                        <audio controls class="mt-2 w-full">
                             <source src="{{ dialect.audio_pronounciation.url }}" type="audio/mpeg">
                         </audio>
                     {% endif %}
@@ -29,10 +40,13 @@
             {% endfor %}
         </ul>
     {% else %}
-        <p><em>No dialect variants yet.</em></p>
+        <p class="italic text-gray-500 mb-6">No dialect variants yet.</p>
     {% endif %}
+    
+  <!-- Back Link -->
+  <a href="{% url 'word_list' %}" class="inline-block text-sm text-white bg-primary hover:bg-indigo-600 px-4 py-2 rounded">
+    ← Back to Word List
+  </a>
+</div>
 
-    <a href="{% url 'word_list' %}">← Back to Word List</a>
-{% comment %} </body>
-</html>     {% endcomment %}
 {% endblock %}
