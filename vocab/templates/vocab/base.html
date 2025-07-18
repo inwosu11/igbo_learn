@@ -47,3 +47,21 @@
       <div class="w-8 h-8 rounded-full bg-gray-300"></div>
     </div>
   </header>
+
+  <main class="p-4">
+    {% block content %}
+    <!-- Page specific content will go here -->
+    {% endblock %}
+  </main>
+
+    <footer class="bg-gray-100 text-center text-sm text-gray-600 py-4 mt-10 border-t">
+    <ul class="flex justify-center space-x-4">
+      <li><a href="#" class="hover:underline">About</a></li>
+      <li><a href="#" class="hover:underline">Contact</a></li>
+      <li><a href="#" class="hover:underline">Privacy</a></li>
+    </ul>
+    <p class="mt-2">&copy; 2025 Igbo Learn. All rights reserved.</p>
+  </footer>
+</body>
+</html>
+{% endblock %}

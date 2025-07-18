@@ -1,3 +1,5 @@
+{% extends 'base.html' %}
+{% block content %}
 <!DOCTYPE html>
 <html>
     <head><title>{{ word.word }}</title></head>
@@ -33,3 +35,4 @@
     <a href="{% url 'word_list' %}">← Back to Word List</a>
 </body>
 </html>    
+{% endblock %}
