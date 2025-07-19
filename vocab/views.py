@@ -17,7 +17,7 @@ def alphabet_list(request):
     return render(request, 'vocab/alphabet_list.html', {'alphabets': alphabets})
 
 def flashcards(request):
-    words = list(IgboWord.objects.all())[:10]  # Get first 10 words for flashcard
+    words = list(IgboWord.objects.all())#[:10]  # Get first 10 words for flashcard
     random.shuffle(words) #optional: shuffle for randomness
     return render(request, 'vocab/flashcards.html', {'words': words})
 
@@ -39,3 +39,19 @@ def create_igbo_word(request):
 def word_detail(request, slug):
     word = get_object_or_404(IgboWord.objects.prefetch_related('dialect_words'), slug=slug)
     return render(request, 'vocab/word_detail.html', {'word':word})
+
+def practice_flashcards(request):
+    words = list(IgboWord.objects.all())
+    total = len(words)
+    
+    index = int(request.GET.get('index', 0)) # default to first word
+    index = max(0, min(index, total - 1)) # keep in bounds
+    
+    word = words[index]
+    context = {
+        'word': word,
+        'index': index,
+        'has_prev': index > 0,
+        'has_next': index < total - 1
+    }
+    return render(request, 'vocab/flashcard_practice.html', context)
