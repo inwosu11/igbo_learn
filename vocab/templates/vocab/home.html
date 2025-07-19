@@ -16,9 +16,14 @@
           View Igbo Words
         </a>
       </li>
+        <li>
+        <a href="{% url 'flashcards' %}" class="text-primary underline hover:text-indigo-800">
+          View Flashcards
+        </a>
+      </li>
     </ul>
-    <h1 class="text-2xl font-bold text-accent mt-10">
+    {% comment %} <h1 class="text-2xl font-bold text-accent mt-10">
       If this is red and centered on a blue background, Tailwind works!
-    </h1>
+    </h1> {% endcomment %}
     </div>
 {% endblock %}
