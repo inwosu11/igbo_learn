@@ -6,34 +6,27 @@
 
   <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
    <!-- Each Flashcard -->
-    <div class="bg-white rounded-xl shadow-lg p-6 border border-gray-200">
-        <p class="text-2xl font-semibold text-primary mb-2">[Igbo Word]</p>
-        <p class="text-gray-700 mb-1">[Meaning]</p>
-        <p class="italic text-sm text-gray-500">[Exaple Sentence]</p>
-        <!--when we add audio this is where it goes-->
-    {% comment %} 
-
     {% for word in words %}
-      <div class="relative group perspective">
-        <div class="transition-transform duration-700 transform-style-preserve-3d group-hover:rotate-y-180 bg-white shadow-lg rounded-lg p-6 h-40">
-          <!-- Front -->
-           <div class="p-6 bg-blue-500 text-white text-xl font-bold">
-                Tailwind is working!
-           </div>
+    <div class="bg-white rounded-xl shadow-lg p-6 border border-gray-200">
+        <p class="text-2xl font-semibold text-primary mb-2">{{ word.word }}</p>
+        <p class="text-gray-700 mb-1"> {{ word.meaning }}</p>
+        <p class="italic text-sm text-gray-500">{{ word.example_sentence }}</p>
+        
+        {% if word.sound_file %}
+        <audio controls class="mt-4">
+            <source src="{{ word.sound_file.url }}" type="audio/mpeg">
+            </audio>
+        {% else %}
+        <p class="text-xs text-gray-400 mt-2">No audio available</p>
+           
+        {%endif%}
 
-          <div class="absolute inset-0 backface-hidden flex items-center justify-center text-2xl font-semibold text-indigo-700">
-            {{ word.word }}
-          </div>
-
-          <!-- Back -->
-          <div class="absolute inset-0 rotate-y-180 backface-hidden flex items-center justify-center text-xl text-gray-700 bg-indigo-100 p-4 rounded-lg">
-            {{ word.meaning }}
-          </div>
-        </div>
-      </div>
+    </div>
     {% endfor %}
-  </div>
 </div>
+<a href="{% url 'home' %}" class="block mt-10 text-center text-primary hover:underline">← Back to Home</a>
+
+
 
 <style>
   .perspective {
@@ -59,4 +52,4 @@
     transform: rotateY(180deg);
   }
 </style>
-{% endblock %} {% endcomment %}
+{% endblock %} 
